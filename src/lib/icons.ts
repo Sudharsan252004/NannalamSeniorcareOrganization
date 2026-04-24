@@ -1,0 +1,41 @@
+import { 
+  Home, 
+  Hospital, 
+  MapPin, 
+  Wind, 
+  Smile, 
+  CalendarCheck, 
+  UserCheck,
+  Award,
+  Clock,
+  Heart,
+  Users,
+  Shield,
+  IndianRupee,
+  Mail,
+  Phone,
+  ChevronRight,
+  Star,
+  CheckCircle2
+} from 'lucide-react';
+
+export const IconMap: Record<string, any> = {
+  Home,
+  Hospital,
+  MapPin,
+  Wind,
+  Smile,
+  CalendarCheck,
+  UserCheck,
+  Award,
+  Clock,
+  Heart,
+  Users,
+  Shield,
+  IndianRupee,
+  Mail,
+  Phone,
+  ChevronRight,
+  Star,
+  CheckCircle2
+};

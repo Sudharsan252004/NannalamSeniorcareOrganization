@@ -1,0 +1,96 @@
+import { motion } from 'motion/react';
+import { Link } from 'react-router-dom';
+import SectionTitle from '../shared/SectionTitle';
+
+const stats = [
+  { number: "15+", label: "Years of Service" },
+  { number: "2000+", label: "Families Served" },
+  { number: "120+", label: "Trained Staff" },
+  { number: "8", label: "Cities Covered" }
+];
+
+export default function AboutSection() {
+  return (
+    <section className="py-24 bg-white overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <motion.div
+            initial={{ opacity: 0, x: -40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <SectionTitle 
+              tamil="எங்களை பற்றி"
+              title="Best Senior Care Organization in Erode"
+            />
+            <div className="space-y-6 text-gray-600 leading-relaxed mb-10">
+              <p>
+                Nannalam Senior Care has been a trusted name in elderly support for over 15 years. Based in Erode, we have expanded our compassionate services across Tamil Nadu, Kerala, and Karnataka.
+              </p>
+              <p className="font-tamil text-teal font-medium text-lg">
+                "உங்கள் பெற்றோரை எங்கள் பெற்றோராக கருதுகிறோம்"
+              </p>
+              <p>
+                Our mission is simple: to treat your parents as our own. We provide ISO 9001:2015 certified care that combines medical professionalism with the warmth of a family member.
+              </p>
+            </div>
+            <Link 
+              to="/about"
+              className="inline-flex items-center bg-teal text-white px-8 py-3.5 rounded-full font-semibold hover:bg-teal-dark transition-all shadow-md"
+            >
+              About Us
+            </Link>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, x: 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="relative"
+          >
+            <div className="relative rounded-3xl overflow-hidden shadow-2xl">
+              <img 
+                src="https://i.pinimg.com/1200x/a2/50/d1/a250d17f65e882251e3d54e2c0c0ae95.jpg" 
+                alt="Happy Seniors" 
+                className="w-full h-[500px] object-cover"
+                referrerPolicy="no-referrer"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-charcoal/40 to-transparent" />
+            </div>
+            
+            {/* Floating Card */}
+            <div className="absolute -bottom-10 -left-10 bg-gold p-8 rounded-2xl shadow-xl max-w-xs hidden md:block">
+              <p className="text-charcoal font-display text-xl font-semibold mb-2 italic">
+                "Dignity in every step of aging."
+              </p>
+              <p className="text-charcoal/70 text-sm">— Nannalam Philosophy</p>
+            </div>
+          </motion.div>
+        </div>
+
+        {/* Stats Row */}
+        <div className="mt-32 grid grid-cols-2 md:grid-cols-4 gap-8">
+          {stats.map((stat, i) => (
+            <motion.div
+              key={stat.label}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.1 }}
+              className="text-center"
+            >
+              <div className="text-4xl md:text-5xl font-display font-bold text-saffron mb-2">
+                {stat.number}
+              </div>
+              <div className="text-sm text-gray-500 font-medium uppercase tracking-wider">
+                {stat.label}
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}

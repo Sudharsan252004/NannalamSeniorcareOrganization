@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Tamil:wght@400;500;600&family=Playfair+Display:wght@500;600&family=Poppins:wght@300;400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Playfair Display", serif;
+  --font-body: "Poppins", sans-serif;
+  --font-tamil: "Noto Sans Tamil", sans-serif;
+
+  --color-saffron: #E8793C;
+  --color-saffron-light: #FFF3EB;
+  --color-saffron-dark: #B85A20;
+  
+  --color-teal: #1D6A6A;
+  --color-teal-light: #E1F5EE;
+  --color-teal-dark: #0F4040;
+  
+  --color-gold: #F9C846;
+  --color-gold-light: #FAEEDA;
+  --color-gold-dark: #BA7517;
+  
+  --color-cream: #FFF8F2;
+  --color-charcoal: #2C2C2A;
+
+  --animate-count-up: count-up 2s ease-out forwards;
+}
+
+@layer base {
+  body {
+    @apply font-body bg-cream text-charcoal antialiased;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+}
+
+@layer utilities {
+  .font-tamil {
+    font-family: var(--font-tamil);
+  }
+}
