@@ -68,7 +68,7 @@ export default function Footer() {
           <div>
             <h4 className="font-display text-lg font-semibold mb-6 text-gold">Locations Served</h4>
             <div className="flex flex-wrap gap-2">
-              {['Erode', 'Namakkal', 'Karur', 'Salem', 'Tirupur', 'Coimbatore', 'Ooty', 'Dharmapuri'].map((city) => (
+              {['Erode'].map((city) => (
                 <span key={city} className="px-3 py-1 bg-white/5 rounded-full text-xs text-white/60">
                   {city}
                 </span>

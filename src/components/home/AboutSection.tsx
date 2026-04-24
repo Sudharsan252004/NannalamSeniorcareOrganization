@@ -2,13 +2,6 @@ import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
 import SectionTitle from '../shared/SectionTitle';
 
-const stats = [
-  { number: "15+", label: "Years of Service" },
-  { number: "2000+", label: "Families Served" },
-  { number: "120+", label: "Trained Staff" },
-  { number: "8", label: "Cities Covered" }
-];
-
 export default function AboutSection() {
   return (
     <section className="py-24 bg-white overflow-hidden">
@@ -26,7 +19,7 @@ export default function AboutSection() {
             />
             <div className="space-y-6 text-gray-600 leading-relaxed mb-10">
               <p>
-                Nannalam Senior Care has been a trusted name in elderly support for over 15 years. Based in Erode, we have expanded our compassionate services across Tamil Nadu, Kerala, and Karnataka.
+                Nannalam Senior Care is dedicated to providing high-quality support for seniors in Erode. Our mission is to offer compassionate and professional care that families can trust.
               </p>
               <p className="font-tamil text-teal font-medium text-lg">
                 "உங்கள் பெற்றோரை எங்கள் பெற்றோராக கருதுகிறோம்"
@@ -69,28 +62,8 @@ export default function AboutSection() {
             </div>
           </motion.div>
         </div>
-
-        {/* Stats Row */}
-        <div className="mt-32 grid grid-cols-2 md:grid-cols-4 gap-8">
-          {stats.map((stat, i) => (
-            <motion.div
-              key={stat.label}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              className="text-center"
-            >
-              <div className="text-4xl md:text-5xl font-display font-bold text-saffron mb-2">
-                {stat.number}
-              </div>
-              <div className="text-sm text-gray-500 font-medium uppercase tracking-wider">
-                {stat.label}
-              </div>
-            </motion.div>
-          ))}
-        </div>
       </div>
     </section>
   );
 }
+

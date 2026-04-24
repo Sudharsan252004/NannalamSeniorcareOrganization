@@ -35,7 +35,7 @@ export default function About() {
             transition={{ delay: 0.1 }}
             className="text-white/70 max-w-2xl mx-auto text-lg"
           >
-            A legacy of 15+ years in providing compassionate, professional, and culturally sensitive care for the elderly in Tamil Nadu.
+            Providing compassionate, professional, and culturally sensitive care for the elderly in Erode.
           </motion.p>
         </div>
         <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full -mr-48 -mt-48" />
@@ -53,10 +53,10 @@ export default function About() {
               <SectionTitle title="Our Story" subtitle="Founded in Erode with a vision to redefine elder care." />
               <div className="space-y-6 text-gray-600 leading-relaxed">
                 <p>
-                  Nannalam Senior Care started as a small community initiative in Erode, driven by the personal experiences of our founders who saw the challenges families faced in finding reliable care for their aging parents.
+                  Nannalam Senior Care was founded in Erode with a clear vision: to redefine elder care by treating every senior as our own family.
                 </p>
                 <p>
-                  Today, we are an ISO 9001:2015 certified organization with a team of over 120 trained professionals. We have expanded our reach across Tamil Nadu, serving families in Coimbatore, Salem, Tirupur, and beyond.
+                  Today, we are an ISO 9001:2015 certified organization with a team of over 120 trained professionals. We are dedicated to providing the highest standard of senior care right here in Erode.
                 </p>
                 <div className="bg-saffron-light p-6 rounded-2xl border-l-4 border-saffron">
                   <p className="font-tamil text-saffron-dark font-medium italic">
@@ -141,34 +141,19 @@ export default function About() {
 
       {/* Locations */}
       <section className="py-24 bg-teal text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <SectionTitle title="Where We Serve" light />
-              <p className="text-white/70 mb-8">
-                While our headquarters is in Erode, we have established a strong presence across major districts in Tamil Nadu and neighboring states.
-              </p>
-              <div className="grid grid-cols-2 gap-4">
-                {['Erode', 'Namakkal', 'Karur', 'Salem', 'Tirupur', 'Coimbatore', 'Ooty', 'Dharmapuri'].map((city) => (
-                  <div key={city} className="flex items-center gap-2 text-gold">
-                    <CheckCircle2 size={18} />
-                    <span className="text-white font-medium">{city}</span>
-                  </div>
-                ))}
-              </div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <SectionTitle title="Our Presence in Erode" light centered />
+          <p className="text-white/70 mb-8 max-w-2xl mx-auto">
+            Our headquarters and primary service hub are located in the heart of Erode, allowing us to respond quickly and provide personalized care across the district.
+          </p>
+          <div className="bg-white/10 p-8 rounded-3xl border border-white/10 inline-block">
+            <div className="flex items-center gap-4 mb-4">
+              <MapPin size={32} className="text-gold" />
+              <h4 className="text-xl font-semibold">Headquarters</h4>
             </div>
-            <div className="bg-white/10 p-8 rounded-3xl border border-white/10">
-              <div className="flex items-center gap-4 mb-6">
-                <MapPin size={32} className="text-gold" />
-                <h4 className="text-xl font-semibold">Regional Presence</h4>
-              </div>
-              <p className="text-white/70 text-sm leading-relaxed mb-6">
-                Our care coordinators are strategically placed to ensure a response time of less than 4 hours in any of these districts. We are committed to expanding our reach to every corner of South India.
-              </p>
-              <div className="h-48 bg-white/5 rounded-2xl flex items-center justify-center italic text-white/30">
-                District Map Visualization
-              </div>
-            </div>
+            <p className="text-white/70 text-sm leading-relaxed">
+              349/444, EVN Road, Surampatti, Erode - 638001
+            </p>
           </div>
         </div>
       </section>

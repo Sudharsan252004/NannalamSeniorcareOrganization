@@ -7,7 +7,7 @@ const slides = [
   {
     headline: "Caring for Your Elders Like Our Own Family",
     tamil: "நலமான வாழ்வு, அன்பான சேவை",
-    sub: "Professional senior care services at your doorstep in Erode & nearby districts.",
+    sub: "Professional senior care services at your doorstep in Erode.",
     cta1: "Book Appointment",
     cta1Path: "/appointment",
     cta2: "Our Services",
