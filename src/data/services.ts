@@ -27,7 +27,7 @@ export const services = [
       { name: 'Standard', duration: '8 hrs/day (12/7)', price: '₹8,500/month', features: ['All Basic', 'Exercise', 'Vitals check'] },
       { name: 'Premium', duration: '24/7', price: '₹14,500/month', features: ['All Standard', 'Night care', 'Live-in caregiver'] },
     ],
-    image: 'https://www.istockphoto.com/photos/indian-care' // Placeholder image URL,
+    image: '/images/services/home-care.png',
   },
   {
     id: 2,
@@ -56,7 +56,7 @@ export const services = [
       { name: 'Night Shift', duration: '8 PM – 8 AM', price: '₹700/day', features: ['12hr attendant', 'Night monitoring', 'Emergency alerts'] },
       { name: '24/7 Full', duration: '2-attendant rotation', price: '₹1,100/day', features: ['All Day+Night', 'No gaps', 'Priority response'] },
     ],
-    image: 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=800',
+    image: '/images/services/hospital-care.png',
   },
   {
     id: 3,
@@ -85,7 +85,7 @@ export const services = [
       { name: 'Weekend', duration: '2 days', price: '₹3,500/person', features: ['2D/1N', 'Hotel stay', 'Guide included'] },
       { name: 'Multi-day', duration: '3–5 days', price: '₹7,500/person', features: ['Custom itinerary', 'All-inclusive', 'Medical support'] },
     ],
-    image: 'https://images.unsplash.com/photo-1548013146-72479768bada?w=800',
+    image: '/images/services/senior-tourism.png',
   },
   {
     id: 4,
@@ -115,7 +115,7 @@ export const services = [
       { name: 'Monthly', duration: '1 month (26 classes)', price: '₹1,200', features: ['Daily classes', 'Progress card', 'Diet tips'] },
       { name: 'Annual', duration: '12 months', price: '₹10,000', features: ['All Monthly', '2 free months', 'Priority batch'] },
     ],
-    image: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800',
+    image: '/images/services/yoga-classes.png',
   },
   {
     id: 5,
@@ -145,7 +145,7 @@ export const services = [
       { name: 'Regular', duration: '3 days/week', price: '₹1,500/month', features: ['12 sessions', 'All activities', 'Monthly event'] },
       { name: 'Full Week', duration: '5 days/week', price: '₹2,200/month', features: ['20 sessions', 'Priority seating', 'Home pickup'] },
     ],
-    image: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=800',
+    image: '/images/services/happy-classes.png',
   },
   {
     id: 6,
@@ -175,7 +175,7 @@ export const services = [
       { name: 'Monthly', duration: 'Up to 4 visits', price: '₹1,500/month', features: ['All Single', 'Priority slots', 'Pharmacy'] },
       { name: 'Comprehensive', duration: 'Unlimited visits', price: '₹3,500/month', features: ['All Monthly', 'Specialist access', 'Emergency slots'] },
     ],
-    image: 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=800',
+    image: '/images/services/hospital-appointment.png',
   },
   {
     id: 7,
@@ -205,36 +205,6 @@ export const services = [
       { name: '24/7 Caretaker', duration: '24 hrs, 7 days', price: '₹16,000/month', features: ['Live-in', 'Night care', 'Monthly rotation'] },
       { name: 'Specialist', duration: 'ICU/post-op trained', price: '₹20,000/month', features: ['Medical trained', 'Equipment support', 'Doctor liaison'] },
     ],
-    image: 'https://i.pinimg.com/1200x/33/2b/f9/332bf9e2faebbf6e366be52398e5fba4.jpg',
+    image: '/images/services/caretaker-services.png',
   },
-   {
-    id: 8,
-    slug: 'hospital-equipment-rental',
-    icon: 'Package', // Changed from UserCheck to reflect equipment
-    color: 'teal',
-    name: 'Hospital Equipment Rental',
-    tamil: 'மருத்துவ உபகரணங்கள் வாடகை',
-    tagline: 'Quality medical gear, delivered to your doorstep',
-    shortDesc: 'Certified medical equipment available for rent—Hospital beds, Oxygen concentrators, and more in Erode district.',
-    fullDesc: `We provide high-quality, sanitized, and clinically maintained medical equipment for home recovery. 
-    Our range includes manual and motorized hospital beds, respiratory support, and mobility aids. 
-    Each piece of equipment is thoroughly sanitized before delivery and set up by our technicians 
-    to ensure patient safety and comfort at home.`,
-    includes: [
-      'Sanitized and clinically tested equipment',
-      'Free home delivery and professional setup',
-      'On-call technician support (24/7)',
-      'Regular maintenance and calibration',
-      'Demonstration for family members',
-      'Flexible rental extensions',
-      'Quick replacement for faulty units',
-    ],
-    forWhom: 'Patients recovering at home after surgery, elderly individuals with mobility issues, or those requiring respiratory support.',
-    packages: [
-      { name: 'Basic Mobility', duration: 'Monthly Rental', price: '₹1,500/month', features: ['Wheelchair', 'Walker', 'Commode chair'] },
-      { name: 'Patient Bed', duration: 'Monthly Rental', price: '₹3,500/month', features: ['Semi-fowler bed', 'Side rails', 'IV pole'] },
-      { name: 'Critical Care', duration: 'Monthly Rental', price: '₹8,000/month', features: ['Oxygen Concentrator', 'Suction Machine', 'Air Mattress'] },
-    ],
-    image: 'https://i.pinimg.com/1200x/79/8b/aa/798baaafd82f24b26ed955022ed18e6d.jpg', // Updated to a medical equipment image
-},
 ];

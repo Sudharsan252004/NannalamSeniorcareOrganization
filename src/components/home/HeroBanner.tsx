@@ -111,7 +111,7 @@ export default function HeroBanner() {
                 referrerPolicy="no-referrer"
               />
             </div>
-            
+
             {/* Trust Badge */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}

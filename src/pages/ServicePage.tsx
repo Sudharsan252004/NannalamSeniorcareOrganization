@@ -18,15 +18,15 @@ export default function ServicePage() {
       {/* Hero */}
       <section className="relative h-[400px] md:h-[500px] flex items-center overflow-hidden">
         <div className="absolute inset-0">
-          <img 
-            src={service.image} 
-            alt={service.name} 
+          <img
+            src={service.image}
+            alt={service.name}
             className="w-full h-full object-cover"
             referrerPolicy="no-referrer"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-charcoal/90 via-charcoal/60 to-transparent" />
         </div>
-        
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div
             initial={{ opacity: 0, x: -40 }}
@@ -99,7 +99,7 @@ export default function ServicePage() {
                 <p className="text-white/70 text-sm mb-8 leading-relaxed">
                   Ready to provide the best care for your loved ones? Schedule a free consultation today.
                 </p>
-                <Link 
+                <Link
                   to="/appointment"
                   className="block w-full bg-gold text-charcoal text-center py-4 rounded-xl font-bold hover:bg-gold-dark transition-all shadow-lg"
                 >
@@ -130,7 +130,7 @@ export default function ServicePage() {
             {services.filter(s => s.slug !== slug).slice(0, 3).map((s, i) => {
               const RelatedIcon = IconMap[s.icon];
               return (
-                <Link 
+                <Link
                   key={s.slug}
                   to={`/services/${s.slug}`}
                   className="group bg-cream/50 rounded-2xl p-6 border border-transparent hover:border-saffron transition-all"
