@@ -207,4 +207,34 @@ export const services = [
     ],
     image: 'https://i.pinimg.com/1200x/33/2b/f9/332bf9e2faebbf6e366be52398e5fba4.jpg',
   },
+   {
+    id: 8,
+    slug: 'hospital-equipment-rental',
+    icon: 'Package', // Changed from UserCheck to reflect equipment
+    color: 'teal',
+    name: 'Hospital Equipment Rental',
+    tamil: 'மருத்துவ உபகரணங்கள் வாடகை',
+    tagline: 'Quality medical gear, delivered to your doorstep',
+    shortDesc: 'Certified medical equipment available for rent—Hospital beds, Oxygen concentrators, and more in Erode district.',
+    fullDesc: `We provide high-quality, sanitized, and clinically maintained medical equipment for home recovery. 
+    Our range includes manual and motorized hospital beds, respiratory support, and mobility aids. 
+    Each piece of equipment is thoroughly sanitized before delivery and set up by our technicians 
+    to ensure patient safety and comfort at home.`,
+    includes: [
+      'Sanitized and clinically tested equipment',
+      'Free home delivery and professional setup',
+      'On-call technician support (24/7)',
+      'Regular maintenance and calibration',
+      'Demonstration for family members',
+      'Flexible rental extensions',
+      'Quick replacement for faulty units',
+    ],
+    forWhom: 'Patients recovering at home after surgery, elderly individuals with mobility issues, or those requiring respiratory support.',
+    packages: [
+      { name: 'Basic Mobility', duration: 'Monthly Rental', price: '₹1,500/month', features: ['Wheelchair', 'Walker', 'Commode chair'] },
+      { name: 'Patient Bed', duration: 'Monthly Rental', price: '₹3,500/month', features: ['Semi-fowler bed', 'Side rails', 'IV pole'] },
+      { name: 'Critical Care', duration: 'Monthly Rental', price: '₹8,000/month', features: ['Oxygen Concentrator', 'Suction Machine', 'Air Mattress'] },
+    ],
+    image: 'https://i.pinimg.com/1200x/79/8b/aa/798baaafd82f24b26ed955022ed18e6d.jpg', // Updated to a medical equipment image
+},
 ];
