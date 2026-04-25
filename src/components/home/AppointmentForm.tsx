@@ -117,8 +117,8 @@ export default function AppointmentForm() {
                     {...register("service", { required: "Select a service" })}
                     className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-saffron focus:ring-2 focus:ring-saffron/20 outline-none transition-all bg-white"
                   >
-                    <option value="">Select Service</option>
-                    {services.map(s => <option key={s.slug} value={s.slug}>{s.name}</option>)}
+                    <option value="">Select Service / சேவையைத் தேர்ந்தெடுக்கவும்</option>
+                    {services.map(s => <option key={s.slug} value={s.slug}>{s.name} / {s.tamil}</option>)}
                   </select>
                   {errors.service && <span className="text-red-500 text-[10px] mt-1">{errors.service.message}</span>}
                 </div>

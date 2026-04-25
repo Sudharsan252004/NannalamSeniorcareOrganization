@@ -38,7 +38,7 @@ export default function ServiceCard({ service, index }: ServiceCardProps) {
         <img
           src={service.image}
           alt={service.name}
-          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+          className={`w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 ${service.imageAlignment || 'object-center'}`}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-charcoal/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
@@ -51,7 +51,10 @@ export default function ServiceCard({ service, index }: ServiceCardProps) {
       <div className="p-8 flex flex-col flex-grow">
         <div className="mb-4">
           <span className="font-tamil text-saffron text-xs font-bold uppercase tracking-widest">{service.tamil}</span>
-          <h3 className="text-2xl font-bold text-charcoal mt-1 group-hover:text-saffron transition-colors">{service.name}</h3>
+          <h3 className="text-2xl font-bold text-charcoal mt-1 group-hover:text-saffron transition-colors">
+            {service.name}
+            <span className="block text-sm text-gray-400 font-tamil mt-1">{service.tamil}</span>
+          </h3>
         </div>
 
         <p className="text-gray-500 text-sm leading-relaxed mb-8 flex-grow">

@@ -50,7 +50,7 @@ export default function ServicePage() {
           <ArrowRight size={12} />
           <span className="text-gray-600">Services</span>
           <ArrowRight size={12} />
-          <span className="text-saffron">{service.name}</span>
+          <span className="text-saffron">{service.name} <span className="font-tamil text-[10px]">/ {service.tamil}</span></span>
         </div>
       </div>
 
@@ -140,7 +140,10 @@ export default function ServicePage() {
                       {RelatedIcon && <RelatedIcon size={24} />}
                     </div>
                     <div>
-                      <h4 className="font-semibold text-charcoal group-hover:text-saffron transition-colors">{s.name}</h4>
+                      <h4 className="font-semibold text-charcoal group-hover:text-saffron transition-colors leading-tight">
+                        {s.name}
+                        <span className="block text-[10px] font-tamil text-gray-400 mt-0.5">{s.tamil}</span>
+                      </h4>
                       <p className="text-xs text-gray-400 font-tamil">{s.tamil}</p>
                     </div>
                   </div>
