@@ -69,7 +69,7 @@ export default function Footer() {
           <div>
             <h4 className="font-display text-lg font-semibold mb-6 text-gold">Locations Served</h4>
             <div className="flex flex-wrap gap-2">
-              {['Erode'].map((city) => (
+              {['Erode', 'Perundurai', 'Bhavani', 'Gobichettipalayam', 'Sathyamangalam', 'Kodumudi'].map((city) => (
                 <span key={city} className="px-3 py-1 bg-white/5 rounded-full text-xs text-white/60">
                   {city}
                 </span>
@@ -82,14 +82,23 @@ export default function Footer() {
               </div>
               <div className="flex items-center gap-3 text-sm text-white/70">
                 <Phone size={18} className="text-gold shrink-0" />
-                <span>+91 98765 43210</span>
+                <span>+91 99945 75396</span>
               </div>
               <div className="flex items-center gap-3 text-sm text-white/70">
                 <Mail size={18} className="text-gold shrink-0" />
-                <span>care@nannalam.in</span>
+                <span>care@nannalamseniorcare.in</span>
               </div>
             </div>
           </div>
+        </div>
+
+        {/* SEO Keywords (Subtle) */}
+        <div className="mt-16 pt-8 border-t border-white/5 text-[10px] text-white/20 leading-relaxed">
+          <p>
+            Popular Searches: Nannalam Senior Care Erode | Old Age Home in Erode | Home Care Services Tamil Nadu | Hospital Bedside Attendant Erode | 
+            Patient Care Services Erode | Home Nurse Erode | Senior Citizen Yoga Classes | Geriatric Care Tamil Nadu | Elderly Assistance Erode | 
+            Best Caretaker Services in Erode District | Assisted Living Erode | முதியோர் பராமரிப்பு ஈரோடு | ஈரோடு முதியோர் இல்லம்
+          </p>
         </div>
 
         <div className="mt-16 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-white/50">

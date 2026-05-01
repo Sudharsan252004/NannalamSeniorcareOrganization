@@ -5,9 +5,9 @@ import { Star } from 'lucide-react';
 
 const slides = [
   {
-    headline: "Caring for Your Elders Like Our Own Family",
+    headline: "Nannalam Senior Care: Caring for Your Elders Like Family",
     tamil: "நலமான வாழ்வு, அன்பான சேவை",
-    sub: "Professional senior care services at your doorstep in Erode.",
+    sub: "Professional senior care and old care services at your doorstep in Erode, Tamil Nadu.",
     cta1: "Book Appointment",
     cta1Path: "/appointment",
     cta2: "Our Services",

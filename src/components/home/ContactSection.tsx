@@ -4,8 +4,8 @@ import SectionTitle from '../shared/SectionTitle';
 
 const contactInfo = [
   { icon: MapPin, title: "Erode Office", content: "349/444, EVN Road, Surampatti, Erode - 638001" },
-  { icon: Phone, title: "Phone / WhatsApp", content: "+91 98765 43210" },
-  { icon: Mail, title: "Email", content: "care@nannalam.in" },
+  { icon: Phone, title: "Phone / WhatsApp", content: "+91 99945 75396" },
+  { icon: Mail, title: "Email", content: "care@nannalamseniorcare.in" },
   { icon: Clock, title: "Office Hours", content: "Mon–Sat: 9 AM – 6 PM" }
 ];
 

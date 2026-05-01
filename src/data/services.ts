@@ -7,10 +7,10 @@ export const services = [
     name: 'Home Care for Seniors',
     tamil: 'வீட்டு சேவை',
     tagline: 'Expert care at your doorstep',
-    shortDesc: 'Skilled caregivers visiting daily for personal care, medication, and companionship.',
-    fullDesc: `At Nannalam Senior Care, our Home Care service brings professional medical
-    and personal care directly to your loved one's home in Erode. Our trained Tamil-speaking
-    caregivers provide compassionate, round-the-clock assistance — from bathing and meals
+    shortDesc: 'Skilled home nursing and caregivers visiting daily for personal care, medication, and companionship in Erode.',
+    fullDesc: `At Nannalam Senior Care, our Home Care and Nursing service brings professional medical
+    and personal care directly to your loved one's home in Erode. As the leading provider of elderly care in Tamil Nadu, 
+    our trained Tamil-speaking caregivers provide compassionate, round-the-clock assistance — from bathing and meals
     to medication reminders and vital monitoring.`,
     includes: [
       'Personal hygiene & grooming assistance',
@@ -37,10 +37,11 @@ export const services = [
     name: 'Hospital Care for Seniors',
     tamil: 'மருத்துவமனை சேவை',
     tagline: 'Beside them every step',
-    shortDesc: 'Dedicated trained attendants supporting seniors inside hospitals — 12/7 or 24/7.',
-    fullDesc: `Hospitalization can be stressful for seniors. Our professional hospital attendants
+    shortDesc: 'Dedicated bedside attendants and patient care support inside hospitals — 12/7 or 24/7 in Erode.',
+    fullDesc: `Hospitalization can be stressful for seniors. Our professional hospital bedside attendants
     stay by your loved one's bedside in any Erode hospital, coordinating with doctors,
-    handling nursing requests, providing companionship, and keeping the family informed in real time.`,
+    handling nursing requests, providing companionship, and keeping the family informed in real time. 
+    We provide the best patient care services in Erode and nearby districts.`,
     includes: [
       'Bedside care & companionship',
       'Coordination with doctors & nurses',
@@ -185,11 +186,11 @@ export const services = [
     name: 'Caretaker Services',
     tamil: 'பராமரிப்பாளர் சேவை',
     tagline: 'Trained hands, caring hearts',
-    shortDesc: 'Trained male and female caretakers placed at your home — 12/7 or 24/7 in Erode district.',
-    fullDesc: `Our caretakers are rigorously trained, police-verified, and experienced in elder care.
-    We place the right caretaker based on the senior's specific needs — whether it's a bedridden patient
+    shortDesc: 'Trained home nurse and female/male caretakers placed at your home — 12/7 or 24/7 in Erode district.',
+    fullDesc: `Our caretakers and home nurses are rigorously trained, police-verified, and experienced in elder care.
+    We place the right caregiver based on the senior's specific needs — whether it's a bedridden patient
     needing full medical assistance, or an active elder who just needs companionship and help with
-    daily activities. All caretakers speak Tamil and are supervised monthly by our care coordinator.`,
+    daily activities. All our caretakers speak Tamil and are supervised monthly by our care coordinator in Erode.`,
     includes: [
       'Police-verified, background-checked staff',
       'Tamil-speaking male & female caretakers',

@@ -10,13 +10,13 @@ export default function TopBar() {
         </div>
       </div>
       <div className="flex items-center gap-6">
-        <a href="tel:+919876543210" className="flex items-center gap-1 hover:text-gold transition-colors">
+        <a href="tel:+919994575396" className="flex items-center gap-1 hover:text-gold transition-colors">
           <Phone size={14} />
-          <span>+91 98765 43210</span>
+          <span>+91 99945 75396</span>
         </a>
-        <a href="mailto:care@nannalam.in" className="flex items-center gap-1 hover:text-gold transition-colors">
+        <a href="mailto:care@nannalamseniorcare.in" className="flex items-center gap-1 hover:text-gold transition-colors">
           <Mail size={14} />
-          <span>care@nannalam.in</span>
+          <span>care@nannalamseniorcare.in</span>
         </a>
         <div className="flex items-center gap-1">
           <Clock size={14} />

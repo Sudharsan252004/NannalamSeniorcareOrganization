@@ -44,7 +44,7 @@ export default function Contact() {
               </div>
               <h3 className="text-xl font-semibold mb-2">Call Support</h3>
               <p className="text-gray-500 text-sm mb-4">Available Mon-Sat, 9am-6pm</p>
-              <a href="tel:+919876543210" className="text-saffron font-bold text-lg">+91 98765 43210</a>
+              <a href="tel:+919876543210" className="text-saffron font-bold text-lg">+91 99945 75396</a>
             </div>
             
             <div className="bg-white p-10 rounded-3xl shadow-sm text-center">
@@ -53,7 +53,7 @@ export default function Contact() {
               </div>
               <h3 className="text-xl font-semibold mb-2">Email Us</h3>
               <p className="text-gray-500 text-sm mb-4">We'll respond within 24 hours</p>
-              <a href="mailto:care@nannalam.in" className="text-teal font-bold text-lg">care@nannalam.in</a>
+              <a href="mailto:care@nannalamseniorcare.in" className="text-teal font-bold text-lg">care@nannalamseniorcare.in</a>
             </div>
 
             <div className="bg-white p-10 rounded-3xl shadow-sm text-center">
@@ -62,7 +62,7 @@ export default function Contact() {
               </div>
               <h3 className="text-xl font-semibold mb-2">WhatsApp</h3>
               <p className="text-gray-500 text-sm mb-4">Quick chat for inquiries</p>
-              <a href="https://wa.me/919876543210" className="text-gold-dark font-bold text-lg">Chat with Us</a>
+              <a href="https://wa.me/919994575396" className="text-gold-dark font-bold text-lg">Chat with Us</a>
             </div>
           </div>
         </div>
