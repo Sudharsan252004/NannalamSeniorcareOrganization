@@ -69,7 +69,7 @@ export default function Footer() {
           <div>
             <h4 className="font-display text-lg font-semibold mb-6 text-gold">Locations Served</h4>
             <div className="flex flex-wrap gap-2">
-              {['Erode', 'Perundurai', 'Bhavani', 'Gobichettipalayam', 'Sathyamangalam', 'Kodumudi'].map((city) => (
+              {['Erode'].map((city) => (
                 <span key={city} className="px-3 py-1 bg-white/5 rounded-full text-xs text-white/60">
                   {city}
                 </span>
@@ -78,15 +78,15 @@ export default function Footer() {
             <div className="mt-8 space-y-4">
               <div className="flex items-start gap-3 text-sm text-white/70">
                 <MapPin size={18} className="text-gold shrink-0" />
-                <span>349/444, EVN Road, Surampatti, Erode - 638001</span>
+                <span>2nd nachiappa Street,RR complex,Near varnam Plate decor Erode-638001</span>
               </div>
               <div className="flex items-center gap-3 text-sm text-white/70">
                 <Phone size={18} className="text-gold shrink-0" />
-                <span>+91 99945 75396</span>
+                <span>+91 9942037837</span>
               </div>
               <div className="flex items-center gap-3 text-sm text-white/70">
                 <Mail size={18} className="text-gold shrink-0" />
-                <span>care@nannalamseniorcare.in</span>
+                <span>nannalamseniorcare@gmail.com</span>
               </div>
             </div>
           </div>

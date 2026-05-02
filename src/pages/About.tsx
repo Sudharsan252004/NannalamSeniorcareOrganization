@@ -140,23 +140,7 @@ export default function About() {
       </section>
 
       {/* Locations */}
-      <section className="py-24 bg-teal text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <SectionTitle title="Our Presence in Erode" light centered />
-          <p className="text-white/70 mb-8 max-w-2xl mx-auto">
-            Our headquarters and primary service hub are located in the heart of Erode, allowing us to respond quickly and provide personalized care across the district.
-          </p>
-          <div className="bg-white/10 p-8 rounded-3xl border border-white/10 inline-block">
-            <div className="flex items-center gap-4 mb-4">
-              <MapPin size={32} className="text-gold" />
-              <h4 className="text-xl font-semibold">Headquarters</h4>
-            </div>
-            <p className="text-white/70 text-sm leading-relaxed">
-              349/444, EVN Road, Surampatti, Erode - 638001
-            </p>
-          </div>
-        </div>
-      </section>
+      
     </div>
   );
 }

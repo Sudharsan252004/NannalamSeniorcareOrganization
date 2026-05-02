@@ -42,13 +42,13 @@ export default function Appointment() {
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
             <a 
-              href="tel:+919876543210" 
+              href="tel:+919942037837" 
               className="flex items-center gap-3 bg-teal text-white px-8 py-4 rounded-full font-bold shadow-lg hover:bg-teal-dark transition-all"
             >
-              Call: +91 98765 43210
+              Call: +91 9942037837
             </a>
             <a 
-              href="https://wa.me/919876543210" 
+              href="https://wa.me/919942037837" 
               className="flex items-center gap-3 bg-green-500 text-white px-8 py-4 rounded-full font-bold shadow-lg hover:bg-green-600 transition-all"
             >
               WhatsApp Us

@@ -3,11 +3,23 @@ import React, { useState, useEffect } from "react";
 // ─── Types ────────────────────────────────────────────────────────────────────
 
 interface FloatingContactWidgetProps {
-  phoneNumber: string;       // e.g. "919876543210"  (no + or spaces)
-  whatsappMessage?: string;  // optional pre-filled message
+  phoneNumber: string; // "9994575396" OR "919994575396" OR "+919994575396"
+  whatsappMessage?: string;
+  defaultCountryCode?: string; // default "91"
 }
 
-// ─── Inline styles (zero external deps) ──────────────────────────────────────
+// ─── Helper: Format phone number ─────────────────────────────────────────────
+
+const formatPhoneNumber = (phone: string, countryCode: string) => {
+  let cleaned = phone.replace(/\D/g, "");
+
+  if (cleaned.startsWith(countryCode)) return cleaned;
+  if (cleaned.length === 10) return countryCode + cleaned;
+
+  return cleaned;
+};
+
+// ─── Inject Styles ───────────────────────────────────────────────────────────
 
 const injectStyles = () => {
   if (document.getElementById("fcw-styles")) return;
@@ -15,11 +27,10 @@ const injectStyles = () => {
   const style = document.createElement("style");
   style.id = "fcw-styles";
   style.textContent = `
-    /* Keyframes */
     @keyframes fcw-rise {
       0%   { opacity: 0; transform: translateY(40px) scale(0.7); }
       60%  { transform: translateY(-6px) scale(1.05); }
-      100% { opacity: 1; transform: translateY(0)   scale(1); }
+      100% { opacity: 1; transform: translateY(0) scale(1); }
     }
     @keyframes fcw-pulse {
       0%, 100% { box-shadow: 0 0 0 0 rgba(37,211,102,0.55); }
@@ -30,7 +41,6 @@ const injectStyles = () => {
       50%       { box-shadow: 0 0 0 10px rgba(59,130,246,0); }
     }
 
-    /* Container */
     .fcw-container {
       position: fixed;
       bottom: 28px;
@@ -42,32 +52,27 @@ const injectStyles = () => {
       z-index: 9999;
     }
 
-    /* Tooltip wrapper */
     .fcw-item {
       position: relative;
       display: flex;
       align-items: center;
     }
 
-    /* Tooltip bubble */
     .fcw-tooltip {
       position: absolute;
       right: calc(100% + 12px);
       background: rgba(15,15,20,0.88);
       color: #fff;
-      font-family: 'DM Sans', ui-sans-serif, system-ui, sans-serif;
       font-size: 13px;
-      font-weight: 500;
-      letter-spacing: 0.01em;
       padding: 6px 12px;
       border-radius: 8px;
       white-space: nowrap;
-      pointer-events: none;
       opacity: 0;
       transform: translateX(6px);
-      transition: opacity 0.2s ease, transform 0.2s ease;
-      backdrop-filter: blur(8px);
+      transition: 0.2s;
+      pointer-events: none;
     }
+
     .fcw-tooltip::after {
       content: '';
       position: absolute;
@@ -77,13 +82,12 @@ const injectStyles = () => {
       border: 6px solid transparent;
       border-left-color: rgba(15,15,20,0.88);
     }
-    .fcw-item:hover .fcw-tooltip,
-    .fcw-item:focus-within .fcw-tooltip {
+
+    .fcw-item:hover .fcw-tooltip {
       opacity: 1;
       transform: translateX(0);
     }
 
-    /* Base button */
     .fcw-btn {
       width: 56px;
       height: 56px;
@@ -93,67 +97,60 @@ const injectStyles = () => {
       display: flex;
       align-items: center;
       justify-content: center;
-      transition: transform 0.22s cubic-bezier(.34,1.56,.64,1),
-                  filter 0.18s ease,
-                  box-shadow 0.18s ease;
-      outline: none;
       text-decoration: none;
-      flex-shrink: 0;
-    }
-    .fcw-btn:hover  { transform: scale(1.18); filter: brightness(1.12); }
-    .fcw-btn:active { transform: scale(0.94); }
-    .fcw-btn:focus-visible {
-      outline: 3px solid #fff;
-      outline-offset: 3px;
+      transition: transform 0.2s ease, filter 0.2s ease;
     }
 
-    /* WhatsApp */
+    .fcw-btn:hover {
+      transform: scale(1.15);
+      filter: brightness(1.1);
+    }
+
+    .fcw-btn:active {
+      transform: scale(0.95);
+    }
+
+    /* Official WhatsApp color */
     .fcw-btn-wa {
-      background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
-      box-shadow: 0 6px 20px rgba(37,211,102,0.45);
-      animation:
-        fcw-rise  0.55s cubic-bezier(.34,1.56,.64,1) both,
-        fcw-pulse 2.4s 1.2s ease-in-out infinite;
+      background: #25D366;
+      animation: fcw-rise 0.5s, fcw-pulse 2.5s infinite;
     }
 
-    /* Call */
     .fcw-btn-call {
-      background: linear-gradient(135deg, #3B82F6 0%, #1D4ED8 100%);
-      box-shadow: 0 6px 20px rgba(59,130,246,0.45);
-      animation:
-        fcw-rise      0.55s 0.1s cubic-bezier(.34,1.56,.64,1) both,
-        fcw-pulse-call 2.4s 1.4s ease-in-out infinite;
+      background: linear-gradient(135deg, #3B82F6, #1D4ED8);
+      animation: fcw-rise 0.5s 0.1s, fcw-pulse-call 2.5s infinite;
     }
 
-    /* Responsive — slightly smaller on very small screens */
     @media (max-width: 420px) {
-      .fcw-container { bottom: 18px; right: 18px; gap: 12px; }
-      .fcw-btn       { width: 50px; height: 50px; }
+      .fcw-container { bottom: 18px; right: 18px; }
+      .fcw-btn { width: 50px; height: 50px; }
     }
   `;
   document.head.appendChild(style);
 };
 
-// ─── SVG Icons ────────────────────────────────────────────────────────────────
+// ─── Icons ───────────────────────────────────────────────────────────────────
 
-const WhatsAppIcon: React.FC = () => (
-  <svg width="28" height="28" viewBox="0 0 24 24" fill="#fff" aria-hidden="true">
-    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
-    <path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.558 4.116 1.535 5.845L.057 23.428a.75.75 0 0 0 .916.948l5.733-1.502A11.943 11.943 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.822 9.822 0 0 1-5.007-1.367l-.358-.213-3.404.893.908-3.32-.234-.371A9.818 9.818 0 0 1 2.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/>
+// ✅ Exact WhatsApp Icon
+const WhatsAppIcon = () => (
+  <svg width="28" height="28" viewBox="0 0 32 32" fill="#fff">
+    <path d="M19.11 17.41c-.29-.14-1.7-.84-1.96-.93-.26-.1-.45-.14-.64.14-.18.29-.71.93-.87 1.12-.16.18-.32.2-.6.07-.29-.14-1.2-.44-2.28-1.4-.84-.75-1.41-1.67-1.57-1.95-.16-.29-.02-.44.12-.58.13-.13.29-.34.43-.5.14-.17.18-.29.27-.48.09-.18.04-.34-.02-.48-.07-.14-.64-1.55-.88-2.12-.23-.55-.46-.48-.64-.49-.16-.01-.34-.01-.52-.01-.18 0-.48.07-.73.34-.25.29-.96.94-.96 2.3s.99 2.68 1.13 2.87c.14.18 1.95 2.98 4.72 4.18.66.28 1.17.45 1.57.57.66.21 1.26.18 1.73.11.53-.08 1.7-.7 1.94-1.37.24-.67.24-1.25.17-1.37-.07-.11-.25-.18-.53-.32z"/>
+    <path d="M16.01 2.67C8.68 2.67 2.67 8.68 2.67 16c0 2.35.62 4.64 1.8 6.66L2.4 29.6l7.11-1.86c1.94 1.06 4.14 1.62 6.5 1.62 7.33 0 13.34-6.01 13.34-13.34S23.34 2.67 16.01 2.67zm0 24.23c-2.14 0-4.24-.57-6.07-1.65l-.43-.25-4.22 1.1 1.12-4.1-.27-.44c-1.13-1.85-1.73-3.98-1.73-6.16 0-6.5 5.29-11.79 11.79-11.79S27.8 9.9 27.8 16.4s-5.29 11.5-11.79 11.5z"/>
   </svg>
 );
 
-const PhoneIcon: React.FC = () => (
-  <svg width="26" height="26" viewBox="0 0 24 24" fill="#fff" aria-hidden="true">
+const PhoneIcon = () => (
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="#fff">
     <path d="M6.62 10.79a15.053 15.053 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.61 21 3 13.39 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.58a1 1 0 0 1-.25 1.01l-2.2 2.2z"/>
   </svg>
 );
 
-// ─── Component ────────────────────────────────────────────────────────────────
+// ─── Component ───────────────────────────────────────────────────────────────
 
 const FloatingContactWidget: React.FC<FloatingContactWidgetProps> = ({
   phoneNumber,
   whatsappMessage = "",
+  defaultCountryCode = "91",
 }) => {
   const [mounted, setMounted] = useState(false);
 
@@ -164,25 +161,21 @@ const FloatingContactWidget: React.FC<FloatingContactWidgetProps> = ({
 
   if (!mounted) return null;
 
-  const waHref = whatsappMessage
-    ? `https://wa.me/${phoneNumber}?text=${encodeURIComponent(whatsappMessage)}`
-    : `https://wa.me/${phoneNumber}`;
+  const formattedNumber = formatPhoneNumber(phoneNumber, defaultCountryCode);
 
-  const telHref = `tel:+${phoneNumber}`;
+  const waHref = whatsappMessage
+    ? `https://wa.me/${formattedNumber}?text=${encodeURIComponent(whatsappMessage)}`
+    : `https://wa.me/${formattedNumber}`;
+
+  const telHref = `tel:+${formattedNumber}`;
 
   return (
-    <div className="fcw-container" role="complementary" aria-label="Contact options">
+    <div className="fcw-container">
 
       {/* WhatsApp */}
       <div className="fcw-item">
         <span className="fcw-tooltip">Chat on WhatsApp</span>
-        <a
-          href={waHref}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="fcw-btn fcw-btn-wa"
-          aria-label="Chat on WhatsApp"
-        >
+        <a href={waHref} target="_blank" rel="noopener noreferrer" className="fcw-btn fcw-btn-wa">
           <WhatsAppIcon />
         </a>
       </div>
@@ -190,11 +183,7 @@ const FloatingContactWidget: React.FC<FloatingContactWidgetProps> = ({
       {/* Call */}
       <div className="fcw-item">
         <span className="fcw-tooltip">Call Now</span>
-        <a
-          href={telHref}
-          className="fcw-btn fcw-btn-call"
-          aria-label="Call us now"
-        >
+        <a href={telHref} className="fcw-btn fcw-btn-call">
           <PhoneIcon />
         </a>
       </div>

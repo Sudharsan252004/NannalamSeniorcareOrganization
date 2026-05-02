@@ -3,9 +3,9 @@ import { motion } from 'motion/react';
 import SectionTitle from '../shared/SectionTitle';
 
 const contactInfo = [
-  { icon: MapPin, title: "Erode Office", content: "349/444, EVN Road, Surampatti, Erode - 638001" },
-  { icon: Phone, title: "Phone / WhatsApp", content: "+91 99945 75396" },
-  { icon: Mail, title: "Email", content: "care@nannalamseniorcare.in" },
+  { icon: MapPin, title: "Erode Office", content: "2nd nachiappa Street,RR complex,Near varnam Plate decor Erode-638001" },
+  { icon: Phone, title: "Phone / WhatsApp", content: "+91 9942037837" },
+  { icon: Mail, title: "Email", content: "nannalamseniorcare@gmail.com" },
   { icon: Clock, title: "Office Hours", content: "Mon–Sat: 9 AM – 6 PM" }
 ];
 

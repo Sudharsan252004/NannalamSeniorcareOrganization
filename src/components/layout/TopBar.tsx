@@ -6,17 +6,17 @@ export default function TopBar() {
       <div className="flex items-center gap-4">
         <div className="flex items-center gap-1">
           <MapPin size={14} />
-          <span>Erode, Tamil Nadu | Tamil Nadu · Kerala · Karnataka</span>
+          <span>2nd nachiappa Street,RR complex, Near varnam Plate decor Erode-638001</span>
         </div>
       </div>
       <div className="flex items-center gap-6">
-        <a href="tel:+919994575396" className="flex items-center gap-1 hover:text-gold transition-colors">
+        <a href="tel:+919942037837" className="flex items-center gap-1 hover:text-gold transition-colors">
           <Phone size={14} />
-          <span>+91 99945 75396</span>
+          <span>+91 9942037837</span>
         </a>
-        <a href="mailto:care@nannalamseniorcare.in" className="flex items-center gap-1 hover:text-gold transition-colors">
+        <a href="mailto:nannalamseniorcare@gmail.com" className="flex items-center gap-1 hover:text-gold transition-colors">
           <Mail size={14} />
-          <span>care@nannalamseniorcare.in</span>
+          <span>nannalamseniorcare@gmail.com</span>
         </a>
         <div className="flex items-center gap-1">
           <Clock size={14} />

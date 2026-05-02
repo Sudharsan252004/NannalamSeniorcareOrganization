@@ -207,6 +207,7 @@ export const services = [
       { name: 'Specialist', duration: 'ICU/post-op trained', price: '₹20,000/month', features: ['Medical trained', 'Equipment support', 'Doctor liaison'] },
     ],
     image: '/images/services/caretaker-services.png',
+    
   },
    {
   id: 8,
