@@ -31,10 +31,23 @@ export default function Navbar() {
     <nav className={`sticky top-0 z-50 transition-all duration-300 ${scrolled ? 'bg-white shadow-md py-2' : 'bg-white/90 backdrop-blur-sm py-4'}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
-          {/* Logo */}
-          <Link to="/" className="flex flex-col">
-            <span className="font-display text-2xl font-semibold text-saffron leading-tight">Nannalam Senior Care</span>
-            <span className="font-tamil text-teal text-[10px] md:text-xs font-medium tracking-wide">நன்னலம் மூத்தோர் சேவை</span>
+
+          {/* ✅ Logo + Text */}
+          <Link to="/" className="flex items-center gap-3">
+            <img
+              src="/images/Logo/Logo.png"
+              alt="Nannalam Senior Care Logo"
+              className="h-12 w-auto"
+            />
+
+            <div className="leading-tight">
+              <div className="text-xl font-semibold text-orange-600">
+                Nannalam Senior Care
+              </div>
+              <div className="text-sm text-teal-700 font-tamil">
+                நன்னலம் முதியோர் சேவை
+              </div>
+            </div>
           </Link>
 
           {/* Desktop Nav */}
@@ -43,7 +56,11 @@ export default function Navbar() {
               <Link
                 key={link.path}
                 to={link.path}
-                className={`text-sm font-medium transition-colors hover:text-saffron ${location.pathname === link.path ? 'text-saffron border-b-2 border-saffron' : 'text-charcoal'}`}
+                className={`text-sm font-medium transition-colors hover:text-saffron ${
+                  location.pathname === link.path
+                    ? 'text-saffron border-b-2 border-saffron'
+                    : 'text-charcoal'
+                }`}
               >
                 {link.name}
               </Link>
@@ -53,11 +70,15 @@ export default function Navbar() {
             <div className="relative group">
               <button
                 onMouseEnter={() => setServicesOpen(true)}
-                className={`flex items-center gap-1 text-sm font-medium transition-colors hover:text-saffron ${location.pathname.startsWith('/services') ? 'text-saffron' : 'text-charcoal'}`}
+                className={`flex items-center gap-1 text-sm font-medium transition-colors hover:text-saffron ${
+                  location.pathname.startsWith('/services')
+                    ? 'text-saffron'
+                    : 'text-charcoal'
+                }`}
               >
                 Services <ChevronDown size={16} />
               </button>
-              
+
               <AnimatePresence>
                 {servicesOpen && (
                   <motion.div
@@ -74,7 +95,9 @@ export default function Navbar() {
                         className="block px-4 py-3 text-sm text-charcoal hover:bg-saffron-light hover:text-saffron transition-colors"
                       >
                         <div className="font-medium">{service.name}</div>
-                        <div className="font-tamil text-[10px] opacity-70">{service.tamil}</div>
+                        <div className="font-tamil text-[10px] opacity-70">
+                          {service.tamil}
+                        </div>
                       </Link>
                     ))}
                   </motion.div>
@@ -92,7 +115,10 @@ export default function Navbar() {
 
           {/* Mobile Menu Toggle */}
           <div className="md:hidden flex items-center">
-            <button onClick={() => setIsOpen(!isOpen)} className="text-charcoal p-2">
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="text-charcoal p-2"
+            >
               {isOpen ? <X size={28} /> : <Menu size={28} />}
             </button>
           </div>
@@ -118,8 +144,11 @@ export default function Navbar() {
                   {link.name}
                 </Link>
               ))}
-              
-              <div className="pt-2 pb-1 px-3 text-xs font-semibold text-gray-400 uppercase tracking-wider">Our Services</div>
+
+              <div className="pt-2 pb-1 px-3 text-xs font-semibold text-gray-400 uppercase tracking-wider">
+                Our Services
+              </div>
+
               {services.map((service) => (
                 <Link
                   key={service.slug}

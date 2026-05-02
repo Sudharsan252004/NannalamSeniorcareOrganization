@@ -208,4 +208,55 @@ export const services = [
     ],
     image: '/images/services/caretaker-services.png',
   },
+   {
+  id: 8,
+  slug: 'hospital-equipment-rental',
+  icon: 'UserCheck',
+  color: 'teal',
+  name: 'Hospital Equipment Rental',
+  tamil: 'மருத்துவ உபகரணங்கள் வாடகை',
+  tagline: 'Quality equipment, delivered with care',
+  shortDesc: 'Rent hospital-grade medical equipment for home care — fast delivery across Erode district.',
+  
+  fullDesc: `We provide reliable, well-maintained hospital equipment for patients recovering at home. 
+  All our equipment is sanitized, tested, and ready for immediate use. Whether it's for post-surgery care, 
+  elderly support, or long-term medical needs, we ensure timely delivery, setup, and guidance on usage. 
+  Our team assists families in choosing the right equipment based on the patient's condition, making 
+  home care safe and comfortable.`,
+  
+  includes: [
+    'Hospital beds (manual & motorized)',
+    'Oxygen concentrators & cylinders',
+    'Wheelchairs & walkers',
+    'BiPAP & CPAP machines',
+    'Suction machines & nebulizers',
+    'Patient monitors & IV stands',
+    'Delivery, setup, and demo support',
+  ],
+  
+  forWhom: 'Families who need medical equipment at home for recovery, elderly care, or long-term treatment support.',
+  
+  packages: [
+    { 
+      name: 'Basic Care Setup', 
+      duration: 'Short-term rental', 
+      price: 'Starts from ₹1,500/month', 
+      features: ['Wheelchair/Walker', 'Basic support equipment', 'Quick delivery'] 
+    },
+    { 
+      name: 'Home Recovery Package', 
+      duration: 'Monthly rental', 
+      price: 'Starts from ₹5,000/month', 
+      features: ['Hospital bed', 'Mobility support', 'Setup assistance'] 
+    },
+    { 
+      name: 'Advanced Medical Setup', 
+      duration: 'Long-term rental', 
+      price: 'Starts from ₹10,000/month', 
+      features: ['Oxygen support', 'BiPAP/CPAP', 'Full setup & guidance'] 
+    },
+  ],
+  
+  image: '/images/services/hospital-rental-services.jpg',
+}
 ];

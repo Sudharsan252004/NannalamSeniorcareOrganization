@@ -20,7 +20,35 @@ export default function AppointmentForm() {
   const { register, handleSubmit, formState: { errors }, reset } = useForm<AppointmentFormData>();
 
   const onSubmit = (data: AppointmentFormData) => {
-    console.log('Form Data:', data);
+    let message = `NEW APPOINTMENT REQUEST
+------------------------------------
+
+Customer Details:
+Name: ${data.name}
+Phone: ${data.phone}
+Area/City: ${data.city}
+
+Booking Information:
+Service: ${data.service}
+Date: ${data.date}
+Time Slot: ${data.time.toUpperCase()}
+`;
+
+    // ✅ Add notes only if provided
+    if (data.notes) {
+      message += `\nNotes:\n${data.notes}\n`;
+    }
+
+    message += `
+------------------------------------
+Please reply to confirm this booking.`;
+
+    const phoneNumber = "919994575396"; // 👉 Replace with your WhatsApp number
+
+    const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+
+    window.open(whatsappURL, "_blank");
+
     setSubmitted(true);
     reset();
     setTimeout(() => setSubmitted(false), 5000);
@@ -118,7 +146,11 @@ export default function AppointmentForm() {
                     className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-saffron focus:ring-2 focus:ring-saffron/20 outline-none transition-all bg-white"
                   >
                     <option value="">Select Service / சேவையைத் தேர்ந்தெடுக்கவும்</option>
-                    {services.map(s => <option key={s.slug} value={s.slug}>{s.name} / {s.tamil}</option>)}
+                    {services.map(s => (
+                      <option key={s.slug} value={s.name}>
+                        {s.name} / {s.tamil}
+                      </option>
+                    ))}
                   </select>
                   {errors.service && <span className="text-red-500 text-[10px] mt-1">{errors.service.message}</span>}
                 </div>

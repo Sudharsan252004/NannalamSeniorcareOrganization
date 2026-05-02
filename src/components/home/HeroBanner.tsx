@@ -10,8 +10,8 @@ const slides = [
     sub: "Professional senior care and old care services at your doorstep in Erode, Tamil Nadu.",
     cta1: "Book Appointment",
     cta1Path: "/appointment",
-    cta2: "Our Services",
-    cta2Path: "/#services",
+    cta2: "Contact",
+    cta2Path: "/contact",
     bg: "bg-saffron-light",
     image: "https://i.pinimg.com/1200x/c3/b5/8a/c3b58aaa04f1b9465883ee15b1cc9bbd.jpg"
   },
