@@ -36,7 +36,7 @@ export default function App() {
 
       {/* Floating widget (global) */}
       <FloatingContactWidget
-        phoneNumber="9994575396"
+        phoneNumber="9942037837"
         whatsappMessage="Hello 
 Welcome to Nannalam Senior Care!
 

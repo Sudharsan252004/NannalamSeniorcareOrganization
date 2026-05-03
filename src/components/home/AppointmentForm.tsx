@@ -43,7 +43,7 @@ Time Slot: ${data.time.toUpperCase()}
 ------------------------------------
 Please reply to confirm this booking.`;
 
-    const phoneNumber = "919994575396"; // 👉 Replace with your WhatsApp number
+    const phoneNumber = "919942037837"; // 👉 Replace with your WhatsApp number
 
     const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 

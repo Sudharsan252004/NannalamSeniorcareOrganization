@@ -3,19 +3,20 @@ import React, { useState, useEffect } from "react";
 // ─── Types ────────────────────────────────────────────────────────────────────
 
 interface FloatingContactWidgetProps {
-  phoneNumber: string; // "9994575396" OR "919994575396" OR "+919994575396"
+  phoneNumber?: string; 
   whatsappMessage?: string;
-  defaultCountryCode?: string; // default "91"
+  defaultCountryCode?: string; 
 }
 
 // ─── Helper: Format phone number ─────────────────────────────────────────────
 
 const formatPhoneNumber = (phone: string, countryCode: string) => {
+  // Remove all non-numeric characters
   let cleaned = phone.replace(/\D/g, "");
 
-  if (cleaned.startsWith(countryCode)) return cleaned;
+  // If it's a standard 10-digit number, prepend the country code
   if (cleaned.length === 10) return countryCode + cleaned;
-
+  
   return cleaned;
 };
 
@@ -71,6 +72,7 @@ const injectStyles = () => {
       transform: translateX(6px);
       transition: 0.2s;
       pointer-events: none;
+      font-family: sans-serif;
     }
 
     .fcw-tooltip::after {
@@ -106,11 +108,6 @@ const injectStyles = () => {
       filter: brightness(1.1);
     }
 
-    .fcw-btn:active {
-      transform: scale(0.95);
-    }
-
-    /* Official WhatsApp color */
     .fcw-btn-wa {
       background: #25D366;
       animation: fcw-rise 0.5s, fcw-pulse 2.5s infinite;
@@ -131,7 +128,6 @@ const injectStyles = () => {
 
 // ─── Icons ───────────────────────────────────────────────────────────────────
 
-// ✅ Exact WhatsApp Icon
 const WhatsAppIcon = () => (
   <svg width="28" height="28" viewBox="0 0 32 32" fill="#fff">
     <path d="M19.11 17.41c-.29-.14-1.7-.84-1.96-.93-.26-.1-.45-.14-.64.14-.18.29-.71.93-.87 1.12-.16.18-.32.2-.6.07-.29-.14-1.2-.44-2.28-1.4-.84-.75-1.41-1.67-1.57-1.95-.16-.29-.02-.44.12-.58.13-.13.29-.34.43-.5.14-.17.18-.29.27-.48.09-.18.04-.34-.02-.48-.07-.14-.64-1.55-.88-2.12-.23-.55-.46-.48-.64-.49-.16-.01-.34-.01-.52-.01-.18 0-.48.07-.73.34-.25.29-.96.94-.96 2.3s.99 2.68 1.13 2.87c.14.18 1.95 2.98 4.72 4.18.66.28 1.17.45 1.57.57.66.21 1.26.18 1.73.11.53-.08 1.7-.7 1.94-1.37.24-.67.24-1.25.17-1.37-.07-.11-.25-.18-.53-.32z"/>
@@ -148,8 +144,8 @@ const PhoneIcon = () => (
 // ─── Component ───────────────────────────────────────────────────────────────
 
 const FloatingContactWidget: React.FC<FloatingContactWidgetProps> = ({
-  phoneNumber,
-  whatsappMessage = "",
+  phoneNumber = "9942037837", // Updated number
+  whatsappMessage = "Hello! I'd like to inquire about your services.",
   defaultCountryCode = "91",
 }) => {
   const [mounted, setMounted] = useState(false);
@@ -163,16 +159,11 @@ const FloatingContactWidget: React.FC<FloatingContactWidgetProps> = ({
 
   const formattedNumber = formatPhoneNumber(phoneNumber, defaultCountryCode);
 
-  const waHref = whatsappMessage
-    ? `https://wa.me/${formattedNumber}?text=${encodeURIComponent(whatsappMessage)}`
-    : `https://wa.me/${formattedNumber}`;
-
+  const waHref = `https://wa.me/${formattedNumber}${whatsappMessage ? `?text=${encodeURIComponent(whatsappMessage)}` : ""}`;
   const telHref = `tel:+${formattedNumber}`;
 
   return (
     <div className="fcw-container">
-
-      {/* WhatsApp */}
       <div className="fcw-item">
         <span className="fcw-tooltip">Chat on WhatsApp</span>
         <a href={waHref} target="_blank" rel="noopener noreferrer" className="fcw-btn fcw-btn-wa">
@@ -180,14 +171,12 @@ const FloatingContactWidget: React.FC<FloatingContactWidgetProps> = ({
         </a>
       </div>
 
-      {/* Call */}
       <div className="fcw-item">
         <span className="fcw-tooltip">Call Now</span>
         <a href={telHref} className="fcw-btn fcw-btn-call">
           <PhoneIcon />
         </a>
       </div>
-
     </div>
   );
 };

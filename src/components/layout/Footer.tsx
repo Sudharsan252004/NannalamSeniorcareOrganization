@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Facebook, Instagram, Youtube, MessageCircle, MapPin, Phone, Mail } from 'lucide-react';
+import { MessageCircle, MapPin, Phone, Mail } from 'lucide-react';
 import { services } from '../../data/services';
 
 export default function Footer() {
@@ -7,30 +7,45 @@ export default function Footer() {
     <footer className="bg-teal text-white pt-16 pb-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-          {/* Brand */}
+          
+          {/* Brand & Instagram QR */}
           <div className="space-y-6">
             <Link to="/" className="flex flex-col">
               <span className="font-display text-2xl font-semibold text-gold leading-tight">Nannalam Senior Care</span>
               <span className="font-tamil text-white/80 text-xs font-medium tracking-wide">நன்னலம் மூத்தோர் சேவை</span>
             </Link>
+            
             <p className="text-white/70 text-sm leading-relaxed">
               Caring for your elders with love and dignity. We treat your parents as our own, providing professional care in Erode and across South India.
             </p>
-            <div className="flex gap-4">
-              <a href="#" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-gold hover:text-teal transition-all">
-                <Facebook size={20} />
-              </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-gold hover:text-teal transition-all">
-                <Instagram size={20} />
-              </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-gold hover:text-teal transition-all">
-                <Youtube size={20} />
-              </a>
-              <a href="https://wa.me/919876543210" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-green-500 hover:text-white transition-all">
-                <MessageCircle size={20} />
-              </a>
+
+            {/* Instagram QR Code Section - Enhanced Size */}
+            <div className="flex flex-col gap-3">
+              <span className="text-xs font-semibold uppercase tracking-wider text-gold/80">Follow us on Instagram</span>
+              <div className="flex items-center gap-5">
+                <div className="bg-white p-2 rounded-xl w-40 h-40 shadow-lg shrink-0">
+                  <img 
+                    src="/images/Logo/Insta-Qr1.jpeg" 
+                    alt="Instagram QR Code" 
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+                <div className="flex flex-col gap-3">
+                  <a 
+                    href="https://wa.me/919942037837" 
+                    className="flex items-center justify-center gap-2 px-4 py-2 bg-green-600 hover:bg-green-700 rounded-full text-xs font-medium transition-all shadow-md"
+                  >
+                    <MessageCircle size={14} />
+                    WhatsApp
+                  </a>
+                  <p className="text-[10px] text-white/40 italic leading-tight max-w-[80px]">
+                    Scan to view our daily updates
+                  </p>
+                </div>
+              </div>
             </div>
-            <div className="pt-4">
+
+            <div className="pt-2">
               <div className="inline-block px-3 py-1 border border-white/20 rounded text-[10px] font-semibold uppercase tracking-widest">
                 ISO 9001:2015 Certified
               </div>
@@ -78,7 +93,7 @@ export default function Footer() {
             <div className="mt-8 space-y-4">
               <div className="flex items-start gap-3 text-sm text-white/70">
                 <MapPin size={18} className="text-gold shrink-0" />
-                <span>2nd nachiappa Street,RR complex,Near varnam Plate decor Erode-638001</span>
+                <span>2nd nachiappa Street, RR complex, Near varnam Plate decor, Erode-638001</span>
               </div>
               <div className="flex items-center gap-3 text-sm text-white/70">
                 <Phone size={18} className="text-gold shrink-0" />
@@ -92,7 +107,7 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* SEO Keywords (Subtle) */}
+        {/* SEO Keywords */}
         <div className="mt-16 pt-8 border-t border-white/5 text-[10px] text-white/20 leading-relaxed">
           <p>
             Popular Searches: Nannalam Senior Care Erode | Old Age Home in Erode | Home Care Services Tamil Nadu | Hospital Bedside Attendant Erode | 
