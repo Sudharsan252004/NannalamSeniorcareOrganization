@@ -10,7 +10,7 @@ const pillars = [
   },
   { 
     icon: Shield, 
-    title: "ISO 9001:2015 Certified", 
+    title: "ISO Certified", 
     desc: "Certified quality management for consistent, safe, and professional care." 
   },
   { 

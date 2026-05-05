@@ -53,10 +53,12 @@ export default function About() {
               <SectionTitle title="Our Story" subtitle="Founded in Erode with a vision to redefine elder care." />
               <div className="space-y-6 text-gray-600 leading-relaxed">
                 <p>
-                  Nannalam Senior Care was founded in Erode with a clear vision: to redefine elder care by treating every senior as our own family.
+Nannalam Senior Care began its journey this year in Erode with a simple yet powerful vision — to redefine elder care by treating every senior as a cherished member of our own family.                </p>
+                <p>
+Understanding the growing need for reliable and compassionate elderly support, we started Nannalam with a commitment to provide thoughtful, respectful, and personalized care. Every step we take is guided by empathy, trust, and a deep sense of responsibility toward the families who rely on us.
                 </p>
                 <p>
-                  Today, we are an ISO 9001:2015 certified organization with a team of over 120 trained professionals. We are dedicated to providing the highest standard of senior care right here in Erode.
+                  As we grow, our focus remains on building a dedicated team of trained professionals who share our values and passion for service. We are committed to delivering high-quality senior care that brings comfort, dignity, and peace of mind to every home we serve in Erode.
                 </p>
                 <div className="bg-saffron-light p-6 rounded-2xl border-l-4 border-saffron">
                   <p className="font-tamil text-saffron-dark font-medium italic">

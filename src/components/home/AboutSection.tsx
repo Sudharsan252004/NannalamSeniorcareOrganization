@@ -19,13 +19,11 @@ export default function AboutSection() {
             />
             <div className="space-y-6 text-gray-600 leading-relaxed mb-10">
               <p>
-                Nannalam Senior Care is dedicated to providing high-quality support for seniors in Erode. Our mission is to offer compassionate and professional care that families can trust.
-              </p>
+Nannalam Senior Care is a new initiative launched this year with a heartfelt mission — to provide dependable, compassionate, and respectful care for seniors in Erode. We understand that caring for elderly loved ones is not just a responsibility, but an emotional commitment.              </p>
               <p className="font-tamil text-teal font-medium text-lg">
-                "உங்கள் பெற்றோரை எங்கள் பெற்றோராக கருதுகிறோம்"
-              </p>
+“உங்கள் பெற்றோரை எங்கள் பெற்றோராக கருதுகிறோம்”              </p>
               <p>
-                Our mission is simple: to treat your parents as our own. We provide ISO 9001:2015 certified care that combines medical professionalism with the warmth of a family member.
+                At Nannalam, we truly believe in treating every senior with the same love, patience, and dignity we would offer our own parents. Our services are designed to support both seniors and their families, ensuring comfort, safety, and peace of mind at every step.
               </p>
             </div>
             <Link 

@@ -47,7 +47,6 @@ export default function Footer() {
 
             <div className="pt-2">
               <div className="inline-block px-3 py-1 border border-white/20 rounded text-[10px] font-semibold uppercase tracking-widest">
-                ISO 9001:2015 Certified
               </div>
             </div>
           </div>
@@ -75,8 +74,6 @@ export default function Footer() {
               <li><Link to="/about" className="text-white/70 hover:text-gold text-sm transition-colors">About Us</Link></li>
               <li><Link to="/appointment" className="text-white/70 hover:text-gold text-sm transition-colors">Book Appointment</Link></li>
               <li><Link to="/contact" className="text-white/70 hover:text-gold text-sm transition-colors">Contact Us</Link></li>
-              <li><a href="#" className="text-white/70 hover:text-gold text-sm transition-colors">Privacy Policy</a></li>
-              <li><a href="#" className="text-white/70 hover:text-gold text-sm transition-colors">Terms & Conditions</a></li>
             </ul>
           </div>
 
