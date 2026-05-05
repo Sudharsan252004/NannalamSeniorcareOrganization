@@ -132,6 +132,11 @@ Please reply to confirm this booking.`;
                         required: "Phone is required",
                         pattern: { value: /^[0-9]{10}$/, message: "Valid 10-digit number required" }
                       })}
+                      type="tel"
+                      maxLength={10}
+                      onInput={(e) => {
+                        e.currentTarget.value = e.currentTarget.value.replace(/[^0-9]/g, '');
+                      }}
                       className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-saffron focus:ring-2 focus:ring-saffron/20 outline-none transition-all"
                       placeholder="10-digit Mobile"
                     />
