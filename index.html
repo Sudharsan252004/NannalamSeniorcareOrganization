@@ -5,10 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NB34S7XKZR"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-NB34S7XKZR');
+</script>
+
+    <!-- Facebook Pixel (FIX 13) -->
+    <script>
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', 'XXXXXXXXXXXXXXX');
+      fbq('track', 'PageView');
+    </script>
+
     <!-- ========== PRIMARY META TAGS ========== -->
-    <title>Nannalam Senior Care | Best Elderly Home Care & Old Age Care Services in Erode</title>
-    <meta name="title" content="Nannalam Senior Care | Best Elderly Home Care & Old Age Care Services in Erode" />
-    <meta name="description" content="Nannalam Senior Care provides the best elderly home care, old age care, hospital bedside attendants, and senior nursing services in Erode, Tamil Nadu. Trusted senior citizen care and geriatric wellness. ஈரோடு முதியோர் பராமரிப்பு சேவை." />
+    <title>Nannalam Senior Care | Elderly Home Care in Erode</title>
+    <meta name="title" content="Nannalam Senior Care | Elderly Home Care in Erode" />
+    <meta name="description" content="Nannalam Senior Care offers 24/7 elderly home care in Erode. ISO Certified & trusted by 2000+ families for professional senior care services." />
     <meta name="keywords" content="nannalam senior care, nannalam erode, old care erode, senior care erode, elderly care erode, old age care erode, home care services erode, senior citizen care erode, hospital attendant erode, senior care tamil nadu, home nursing erode, geriatric care erode, old age home erode, bedside care erode, patient care erode, முதியோர் பராமரிப்பு ஈரோடு, ஈரோடு முதியோர் இல்லம், senior wellness erode, nursing care for seniors, caretaker services erode" />
     <meta name="author" content="Nannalam Senior Care" />
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
@@ -55,9 +79,12 @@
     <meta name="twitter:image:alt" content="Nannalam Senior Care logo" />
 
     <!-- ========== FAVICON & APP ICONS ========== -->
-    <link rel="icon" type="image/png" sizes="32x32" href="/images/Logo/Logo.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/images/Logo/Logo.png" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/images/Logo/Logo.png" />
+    <link rel="icon" type="image/png" href="/public/images/logo/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/public/images/logo/favicon.svg" />
+    <link rel="shortcut icon" href="/public/images/logo/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/public/images/logo/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="Nannalam Senior Care" />
+    <link rel="manifest" href="/public/images/logo/site.webmanifest" />
 
 
     <!-- ========== PRECONNECT / PERFORMANCE ========== -->
@@ -116,7 +143,9 @@
       "sameAs": [
         "https://www.facebook.com/nannalam",
         "https://www.instagram.com/nannalam",
-        "https://twitter.com/nannalam"
+        "https://twitter.com/nannalam",
+        "https://www.youtube.com/@nannalam",
+        "https://www.linkedin.com/company/nannalam"
       ],
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
@@ -204,7 +233,24 @@
 
   </head>
   <body>
-    <div id="root"></div>
+    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=XXXXXXXXXXXXXXX&ev=PageView&noscript=1" /></noscript>
+    <div id="root">
+      <!-- STATIC CONTENT FOR LLM/AI READABILITY (FIX 12) -->
+      <div style="display: none;">
+        <h1>Nannalam Senior Care - Elderly Home Care in Erode</h1>
+        <p>Nannalam Senior Care provides professional 24/7 elderly home care, old age care, and nursing services in Erode. ISO Certified and trusted by 2000+ families.</p>
+        <h2>Our Services</h2>
+        <ul>
+          <li>Elderly Home Care & Senior Citizen Care</li>
+          <li>Hospital Bedside Attendant & Nursing Services</li>
+          <li>Home Care for Seniors & Post-Hospitalization Care</li>
+          <li>Yoga Classes & Health Wellness for Seniors</li>
+          <li>Hospital Equipment Rental & Medical Support</li>
+          <li>Senior Tourism & Assisted Travel</li>
+        </ul>
+        <p>Contact us at 2nd Nachiappa Street, RR Complex, Erode-638001. Phone: +91 9942037837. Email: nannalamseniorcare@gmail.com</p>
+      </div>
+    </div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

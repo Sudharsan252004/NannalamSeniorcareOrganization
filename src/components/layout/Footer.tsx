@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { MessageCircle, MapPin, Phone, Mail } from 'lucide-react';
+import { MessageCircle, MapPin, Phone, Mail, Facebook, Instagram, Twitter, Youtube, Linkedin } from 'lucide-react';
 import { services } from '../../data/services';
 
 export default function Footer() {
@@ -45,9 +45,22 @@ export default function Footer() {
               </div>
             </div>
 
-            <div className="pt-2">
-              <div className="inline-block px-3 py-1 border border-white/20 rounded text-[10px] font-semibold uppercase tracking-widest">
-              </div>
+            <div className="pt-2 flex gap-4">
+              <a href="https://www.facebook.com/nannalam" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-gold hover:text-teal transition-all">
+                <Facebook size={16} />
+              </a>
+              <a href="https://www.instagram.com/nannalam" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-gold hover:text-teal transition-all">
+                <Instagram size={16} />
+              </a>
+              <a href="https://twitter.com/nannalam" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-gold hover:text-teal transition-all">
+                <Twitter size={16} />
+              </a>
+              <a href="https://www.youtube.com/@nannalam" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-gold hover:text-teal transition-all">
+                <Youtube size={16} />
+              </a>
+              <a href="https://www.linkedin.com/company/nannalam" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-gold hover:text-teal transition-all">
+                <Linkedin size={16} />
+              </a>
             </div>
           </div>
 
@@ -88,18 +101,29 @@ export default function Footer() {
               ))}
             </div>
             <div className="mt-8 space-y-4">
-              <div className="flex items-start gap-3 text-sm text-white/70">
+              <a 
+                href="https://www.google.com/maps/search/?api=1&query=2nd+nachiappa+Street,+RR+complex,+Near+varnam+Plate+decor,+Erode-638001" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-start gap-3 text-sm text-white/70 hover:text-gold transition-colors"
+              >
                 <MapPin size={18} className="text-gold shrink-0" />
                 <span>2nd nachiappa Street, RR complex, Near varnam Plate decor, Erode-638001</span>
-              </div>
-              <div className="flex items-center gap-3 text-sm text-white/70">
+              </a>
+              <a 
+                href="tel:+919942037837" 
+                className="flex items-center gap-3 text-sm text-white/70 hover:text-gold transition-colors"
+              >
                 <Phone size={18} className="text-gold shrink-0" />
                 <span>+91 9942037837</span>
-              </div>
-              <div className="flex items-center gap-3 text-sm text-white/70">
+              </a>
+              <a 
+                href="mailto:nannalamseniorcare@gmail.com" 
+                className="flex items-center gap-3 text-sm text-white/70 hover:text-gold transition-colors"
+              >
                 <Mail size={18} className="text-gold shrink-0" />
                 <span>nannalamseniorcare@gmail.com</span>
-              </div>
+              </a>
             </div>
           </div>
         </div>

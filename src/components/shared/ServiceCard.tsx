@@ -35,11 +35,15 @@ export default function ServiceCard({ service, index }: ServiceCardProps) {
     >
       {/* Image Container with Fixed Aspect Ratio */}
       <div className="relative aspect-[4/3] overflow-hidden">
-        <img
-          src={service.image}
-          alt={service.name}
-          className={`w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 ${service.imageAlignment || 'object-center'}`}
-        />
+        <picture>
+          <source srcSet={service.image.replace(/\.(png|jpg|jpeg)$/, '.webp')} type="image/webp" />
+          <img
+            src={service.image}
+            alt={service.name}
+            loading="lazy"
+            className={`w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 ${service.imageAlignment || 'object-center'}`}
+          />
+        </picture>
         <div className="absolute inset-0 bg-gradient-to-t from-charcoal/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
         {/* Icon Overlay */}

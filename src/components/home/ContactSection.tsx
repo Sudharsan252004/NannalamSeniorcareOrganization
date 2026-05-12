@@ -3,10 +3,30 @@ import { motion } from 'motion/react';
 import SectionTitle from '../shared/SectionTitle';
 
 const contactInfo = [
-  { icon: MapPin, title: "Erode Office", content: "2nd nachiappa Street,RR complex,Near varnam Plate decor Erode-638001" },
-  { icon: Phone, title: "Phone / WhatsApp", content: "+91 9942037837" },
-  { icon: Mail, title: "Email", content: "nannalamseniorcare@gmail.com" },
-  { icon: Clock, title: "Office Hours", content: "Mon–Sat: 9 AM – 6 PM" }
+  { 
+    icon: MapPin, 
+    title: "Erode Office", 
+    content: "2nd nachiappa Street,RR complex,Near varnam Plate decor Erode-638001",
+    href: "https://www.google.com/maps/search/?api=1&query=2nd+nachiappa+Street,+RR+complex,+Near+varnam+Plate+decor+Erode-638001"
+  },
+  { 
+    icon: Phone, 
+    title: "Phone / WhatsApp", 
+    content: "+91 9942037837",
+    href: "tel:+919942037837"
+  },
+  { 
+    icon: Mail, 
+    title: "Email", 
+    content: "nannalamseniorcare@gmail.com",
+    href: "mailto:nannalamseniorcare@gmail.com"
+  },
+  { 
+    icon: Clock, 
+    title: "Office Hours", 
+    content: "Mon–Sat: 9 AM – 6 PM",
+    href: null
+  }
 ];
 
 export default function ContactSection() {
@@ -36,7 +56,18 @@ export default function ContactSection() {
                   </div>
                   <div>
                     <h4 className="font-semibold text-charcoal mb-1">{item.title}</h4>
-                    <p className="text-sm text-gray-500 leading-relaxed">{item.content}</p>
+                    {item.href ? (
+                      <a 
+                        href={item.href} 
+                        target={item.icon === MapPin ? "_blank" : undefined}
+                        rel={item.icon === MapPin ? "noopener noreferrer" : undefined}
+                        className="text-sm text-gray-500 leading-relaxed hover:text-saffron transition-colors"
+                      >
+                        {item.content}
+                      </a>
+                    ) : (
+                      <p className="text-sm text-gray-500 leading-relaxed">{item.content}</p>
+                    )}
                   </div>
                 </motion.div>
               ))}
