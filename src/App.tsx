@@ -17,6 +17,7 @@ const About = lazy(() => import('./pages/About'));
 const ServicePage = lazy(() => import('./pages/ServicePage'));
 const Appointment = lazy(() => import('./pages/Appointment'));
 const Contact = lazy(() => import('./pages/Contact'));
+const NotFound = lazy(() => import('./pages/NotFound'));
 
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
@@ -31,6 +32,16 @@ export default function App() {
     if (path === '/about') title = "About Us | Nannalam Senior Care Erode";
     if (path === '/contact') title = "Contact Us | Nannalam Senior Care Erode";
     if (path === '/appointment') title = "Book Appointment | Nannalam Senior Care Erode";
+    
+    // Check if the current route matches any defined route, otherwise set 404 title
+    const knownRoutes = ['/', '/about', '/appointment', '/contact'];
+    const isServiceRoute = path.startsWith('/services/');
+    const isKnownRoute = knownRoutes.includes(path) || isServiceRoute;
+
+    if (!isKnownRoute) {
+      title = "Page Not Found | Nannalam Senior Care";
+    }
+
     if (path.startsWith('/services/')) {
       const slug = path.split('/').pop()?.replace(/-/g, ' ');
       if (slug) {
@@ -59,6 +70,7 @@ export default function App() {
             <Route path="/services/:slug" element={<ServicePage />} />
             <Route path="/appointment" element={<Appointment />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>
       </main>
